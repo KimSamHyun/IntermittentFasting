@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Comfortaa-Bold.ttf">
+            <string>Comfortaa-Bold</string>
+        </array>
+        <array key="KOPUBDOTUMBOLD.TTF">
+            <string>KoPubDotumBold</string>
+        </array>
+        <array key="KOPUBDOTUMMEDIUM.TTF">
+            <string>KoPubDotumMedium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IntermittentFasting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GradationView" customModule="IntermittentFasting" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="2ot-k1-ylX">
+                                <rect key="frame" x="124" y="140.5" width="127" height="127"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2ot-k1-ylX" secondAttribute="height" multiplier="1:1" id="TBk-1R-gmh"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVU-8t-v6V" customClass="ButtonLayer" customModule="IntermittentFasting" customModuleProvider="target">
+                                <rect key="frame" x="61" y="426" width="253" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="253" id="yLy-u9-eaY"/>
+                                    <constraint firstAttribute="height" constant="52" id="yvo-cO-cv7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KoPubDotumMedium" family="KoPubDotum" pointSize="19"/>
+                                <state key="normal" title="간헐적 단식이란?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="boderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="26"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="infoBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Obt-xf-Jap"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8b-mY-W9K" customClass="ButtonLayer" customModule="IntermittentFasting" customModuleProvider="target">
+                                <rect key="frame" x="61" y="495" width="253" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="253" id="KPr-ge-Bll"/>
+                                    <constraint firstAttribute="height" constant="52" id="m0m-7g-dTY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KoPubDotumMedium" family="KoPubDotum" pointSize="19"/>
+                                <state key="normal" title="시작하기">
+                                    <color key="titleColor" red="0.37647058820000001" green="0.87058823529999996" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="boderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
+                                        <point key="value" x="0.0" y="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="endPoint">
+                                        <point key="value" x="0.0" y="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MJq-iF-kgi"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop-Eat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM4-Ox-lf6">
+                                <rect key="frame" x="106.5" y="290" width="162.5" height="39.5"/>
+                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fM4-Ox-lf6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="629/677" id="1pV-mv-Urj"/>
+                            <constraint firstItem="AVU-8t-v6V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Ah-RJ-wUz"/>
+                            <constraint firstItem="h8b-mY-W9K" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1058/677" id="7eN-FP-Wym"/>
+                            <constraint firstItem="AVU-8t-v6V" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="918/677" id="DUq-fa-XOs"/>
+                            <constraint firstItem="fM4-Ox-lf6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MoG-RU-DCd"/>
+                            <constraint firstItem="h8b-mY-W9K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RXR-Km-cbm"/>
+                            <constraint firstItem="2ot-k1-ylX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="414/677" id="RlQ-56-AG1"/>
+                            <constraint firstItem="2ot-k1-ylX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hdS-jF-RPe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                <color key="value" red="0.38431372549999998" green="0.79607843140000001" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                <color key="value" red="0.34509803919999998" green="0.87450980389999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
+                                <point key="value" x="0.5" y="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="point" keyPath="endPoint">
+                                <point key="value" x="0.5" y="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="startPointX">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="startPointY">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="endPointX">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="endPointY">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <navigationItem key="navigationItem" id="dPS-Fr-fL1"/>
+                    <connections>
+                        <outlet property="infoButton" destination="AVU-8t-v6V" id="l7l-TD-sEg"/>
+                        <outlet property="startButton" destination="h8b-mY-W9K" id="hgO-vB-DvC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071.2" y="138.98050974512745"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="UL6-os-K3U">
+            <objects>
+                <viewController storyboardIdentifier="InfoViewController" id="bgE-eJ-Uap" customClass="InfoViewController" customModule="IntermittentFasting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xpJ-Fn-6ZR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y7W-4m-mfj" customClass="GradationView" customModule="IntermittentFasting" customModuleProvider="target">
+                                <rect key="frame" x="37" y="104" width="301" height="459"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간헐적 단식이란?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLf-Xv-hLW">
+                                        <rect key="frame" x="61" y="63" width="179" height="29"/>
+                                        <fontDescription key="fontDescription" name="KoPubDotumBold" family="KoPubDotum" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_info_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="eIV-6E-YTa">
+                                        <rect key="frame" x="96.5" y="113.5" width="108" height="63"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7t2-v0-MBQ" customClass="CustomLabel" customModule="IntermittentFasting" customModuleProvider="target">
+                                        <rect key="frame" x="30.5" y="231" width="240" height="188.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">간헐적 단식이란 평소대로 먹다가
+일주일에 한두 번 이상 16시간에서
+24시간 동안 먹는 것을 중단해
+배고픈 상태를 지속하는 것 입니다.
+
+대표적인 방식으로 16:8
+(16시간 단식 후 8시간 안에 식사)
+5:2(일주일에 5일은 정상식, 2일은 단식)
+이 있습니다.</string>
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="15" name="KoPubDotumBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpace">
+                                                <real key="value" value="0.80000000000000004"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEp-Za-VL5">
+                                        <rect key="frame" x="241" y="8" width="50" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_close.png" translatesAutoresizingMaskIntoConstraints="NO" id="NzJ-Iw-OHQ">
+                                                <rect key="frame" x="13.5" y="13.5" width="23" height="23"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="4rG-93-nRN"/>
+                                            <constraint firstAttribute="width" constant="50" id="HFr-Yq-zla"/>
+                                            <constraint firstItem="NzJ-Iw-OHQ" firstAttribute="centerX" secondItem="hEp-Za-VL5" secondAttribute="centerX" id="Ka4-vf-kbo"/>
+                                            <constraint firstItem="NzJ-Iw-OHQ" firstAttribute="centerY" secondItem="hEp-Za-VL5" secondAttribute="centerY" id="QsQ-er-jit"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="NLf-Xv-hLW" firstAttribute="centerX" secondItem="Y7W-4m-mfj" secondAttribute="centerX" id="2Kk-dL-FXE"/>
+                                    <constraint firstItem="NLf-Xv-hLW" firstAttribute="centerY" secondItem="Y7W-4m-mfj" secondAttribute="centerY" multiplier="155/459" id="65Q-kK-9l1"/>
+                                    <constraint firstAttribute="width" constant="301" id="Fr4-G0-sUH"/>
+                                    <constraint firstItem="hEp-Za-VL5" firstAttribute="centerY" secondItem="Y7W-4m-mfj" secondAttribute="centerY" multiplier="0.1" constant="10.049999999999997" id="Orc-3e-ywX"/>
+                                    <constraint firstItem="eIV-6E-YTa" firstAttribute="centerX" secondItem="Y7W-4m-mfj" secondAttribute="centerX" id="d3j-HN-RfF"/>
+                                    <constraint firstItem="7t2-v0-MBQ" firstAttribute="centerY" secondItem="Y7W-4m-mfj" secondAttribute="centerY" multiplier="650/459" id="iFZ-ot-aVV"/>
+                                    <constraint firstAttribute="height" constant="459" id="iVC-SJ-hHg"/>
+                                    <constraint firstItem="7t2-v0-MBQ" firstAttribute="centerX" secondItem="Y7W-4m-mfj" secondAttribute="centerX" id="lNs-wC-V6E"/>
+                                    <constraint firstItem="eIV-6E-YTa" firstAttribute="centerY" secondItem="Y7W-4m-mfj" secondAttribute="centerY" multiplier="290/459" id="lQX-lW-oRs"/>
+                                    <constraint firstItem="hEp-Za-VL5" firstAttribute="centerX" secondItem="Y7W-4m-mfj" secondAttribute="centerX" multiplier="1.7" constant="10.150000000000006" id="uSj-vk-jR0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Y7W-4m-mfj" firstAttribute="centerX" secondItem="xpJ-Fn-6ZR" secondAttribute="centerX" id="SeV-7B-BXt"/>
+                            <constraint firstItem="Y7W-4m-mfj" firstAttribute="centerY" secondItem="xpJ-Fn-6ZR" secondAttribute="centerY" id="fej-qz-Jl9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oVi-dZ-wWP"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="NzJ-Iw-OHQ" id="pyU-TV-AGf"/>
+                        <outlet property="closeView" destination="hEp-Za-VL5" id="8s4-i4-7J1"/>
+                        <outlet property="infoLabel" destination="7t2-v0-MBQ" id="qwL-bk-hvj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ipX-xf-XRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1802.4000000000001" y="142.57871064467767"/>
+        </scene>
+        <!--Input Info View Controller-->
+        <scene sceneID="c8l-XL-UT8">
+            <objects>
+                <viewController storyboardIdentifier="InputInfoViewController" id="X6w-xE-3ZM" customClass="InputInfoViewController" customModule="IntermittentFasting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xin-wE-Dy6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84b-xe-GU7">
+                                <rect key="frame" x="27.5" y="33.5" width="15" height="29.5"/>
+                                <state key="normal" image="icon_back.png"/>
+                                <connections>
+                                    <action selector="backBtnClick:" destination="X6w-xE-3ZM" eventType="touchUpInside" id="LlF-kB-qHs"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인정보를 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmS-uD-TaF">
+                                <rect key="frame" x="27.5" y="118" width="180" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="0fy-4B-vzG"/>
+                                    <constraint firstAttribute="height" constant="82" id="IHL-lr-f7o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KoPubDotumBold" family="KoPubDotum" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVc-Gd-S5f">
+                                <rect key="frame" x="27.5" y="245" width="33" height="21"/>
+                                <fontDescription key="fontDescription" name="KoPubDotumMedium" family="KoPubDotum" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHM-46-fbl">
+                                <rect key="frame" x="27.5" y="465" width="33" height="21"/>
+                                <fontDescription key="fontDescription" name="KoPubDotumMedium" family="KoPubDotum" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="체중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mey-HO-rCT">
+                                <rect key="frame" x="218.5" y="465" width="33" height="21"/>
+                                <fontDescription key="fontDescription" name="KoPubDotumMedium" family="KoPubDotum" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="izC-o8-6Ly" customClass="TextFieldLayer" customModule="IntermittentFasting" customModuleProvider="target">
+                                <rect key="frame" x="27.5" y="282.5" width="126.5" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126.5" id="0uA-38-om3"/>
+                                    <constraint firstAttribute="height" constant="28" id="cjI-kJ-jM0"/>
+                                </constraints>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="KoPubDotumBold" family="KoPubDotum" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.71372549019999998" green="0.71372549019999998" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YHj-wu-zSj" customClass="TextFieldLayer" customModule="IntermittentFasting" customModuleProvider="target">
+                                <rect key="frame" x="27.5" y="502.5" width="126.5" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="1aB-lW-WTw"/>
+                                    <constraint firstAttribute="width" constant="126.5" id="9zk-9c-XmY"/>
+                                </constraints>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="KoPubDotumBold" family="KoPubDotum" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.71372549019999998" green="0.71372549019999998" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxd-ez-srh">
+                                <rect key="frame" x="27.5" y="352.5" width="33" height="21"/>
+                                <fontDescription key="fontDescription" name="KoPubDotumMedium" family="KoPubDotum" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_warning.png" translatesAutoresizingMaskIntoConstraints="NO" id="NID-GW-Uli">
+                                <rect key="frame" x="128.5" y="497" width="25.5" height="25.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25.5" id="7Di-mh-cMS"/>
+                                    <constraint firstAttribute="width" constant="25.5" id="q2i-5F-p0G"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lAX-QI-3MC" customClass="TextFieldLayer" customModule="IntermittentFasting" customModuleProvider="target">
+                                <rect key="frame" x="218.5" y="502.5" width="126.5" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="I3K-NF-5DP"/>
+                                    <constraint firstAttribute="width" constant="126.5" id="pdA-C7-8NF"/>
+                                </constraints>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="KoPubDotumBold" family="KoPubDotum" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.71372549019999998" green="0.71372549019999998" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_warning.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Pb-L7-Cqo">
+                                <rect key="frame" x="319.5" y="497" width="25.5" height="25.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25.5" id="F7e-di-ki5"/>
+                                    <constraint firstAttribute="width" constant="25.5" id="TC9-hw-k36"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Jb-8p-UTU" customClass="GradationView" customModule="IntermittentFasting" customModuleProvider="target">
+                                <rect key="frame" x="232" y="571" width="113" height="57"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="다음" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiA-vM-xhj">
+                                        <rect key="frame" x="21" y="17" width="35" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="KoPubDotumMedium" family="KoPubDotum" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_front.png" translatesAutoresizingMaskIntoConstraints="NO" id="vP8-ZJ-WJY">
+                                        <rect key="frame" x="83" y="18" width="9" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="0QU-xw-CLs"/>
+                                    <constraint firstAttribute="width" constant="113" id="KYS-75-2OS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.34509803919999998" green="0.87450980389999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.38431372549999998" green="0.79607843140000001" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
+                                        <point key="value" x="0.0" y="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="endPoint">
+                                        <point key="value" x="1" y="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                        <real key="value" value="28"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtD-J4-Npb">
+                                <rect key="frame" x="218.5" y="245" width="33" height="21"/>
+                                <fontDescription key="fontDescription" name="KoPubDotumMedium" family="KoPubDotum" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="we7-Xh-52O" customClass="ButtonLayer" customModule="IntermittentFasting" customModuleProvider="target">
+                                <rect key="frame" x="27.5" y="381" width="91" height="45.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45.5" id="IfO-0z-YrY"/>
+                                    <constraint firstAttribute="width" constant="91" id="LhP-cg-mNS"/>
+                                </constraints>
+                                <state key="normal" title="남자">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.71372549019607845" green="0.71372549019607845" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="genderBtnClick:" destination="X6w-xE-3ZM" eventType="touchUpInside" id="UZz-D0-Ftj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBZ-Uv-zcp" customClass="ButtonLayer" customModule="IntermittentFasting" customModuleProvider="target">
+                                <rect key="frame" x="140" y="381" width="91" height="45.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="Pnz-gq-Jcb"/>
+                                    <constraint firstAttribute="height" constant="45.5" id="vHm-IU-9ae"/>
+                                </constraints>
+                                <state key="normal" title="여자">
+                                    <color key="titleColor" red="0.37647058823529411" green="0.8666666666666667" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.37647058823529411" green="0.8666666666666667" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="genderBtnClick:" destination="X6w-xE-3ZM" eventType="touchUpInside" id="SSx-BM-b04"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XHr-07-MUv" customClass="TextFieldLayer" customModule="IntermittentFasting" customModuleProvider="target">
+                                <rect key="frame" x="218.5" y="282.5" width="126.5" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126.5" id="31x-UE-psh"/>
+                                    <constraint firstAttribute="height" constant="28" id="RJ8-eE-joa"/>
+                                </constraints>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="KoPubDotumBold" family="KoPubDotum" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.71372549019999998" green="0.71372549019999998" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Vxd-ez-srh" firstAttribute="centerY" secondItem="xin-wE-Dy6" secondAttribute="centerY" multiplier="737/677" id="4JR-Vt-Hol"/>
+                            <constraint firstItem="izC-o8-6Ly" firstAttribute="leading" secondItem="YVc-Gd-S5f" secondAttribute="leading" id="5bj-Fw-Bpz"/>
+                            <constraint firstItem="6Pb-L7-Cqo" firstAttribute="trailing" secondItem="lAX-QI-3MC" secondAttribute="trailing" id="FSp-x6-567"/>
+                            <constraint firstItem="UtD-J4-Npb" firstAttribute="centerY" secondItem="YVc-Gd-S5f" secondAttribute="centerY" id="HIJ-aC-kqL"/>
+                            <constraint firstItem="5Jb-8p-UTU" firstAttribute="trailing" secondItem="lAX-QI-3MC" secondAttribute="trailing" id="If0-Q3-MZb"/>
+                            <constraint firstItem="XHr-07-MUv" firstAttribute="centerY" secondItem="izC-o8-6Ly" secondAttribute="centerY" id="KDk-KO-asc"/>
+                            <constraint firstItem="84b-xe-GU7" firstAttribute="centerY" secondItem="xin-wE-Dy6" secondAttribute="centerY" multiplier="98/677" id="O4Y-GL-ZWy"/>
+                            <constraint firstItem="6Pb-L7-Cqo" firstAttribute="centerY" secondItem="NID-GW-Uli" secondAttribute="centerY" id="ODv-PQ-gBR"/>
+                            <constraint firstItem="mey-HO-rCT" firstAttribute="leading" secondItem="UtD-J4-Npb" secondAttribute="leading" id="OgI-Jn-8cR"/>
+                            <constraint firstItem="lAX-QI-3MC" firstAttribute="leading" secondItem="mey-HO-rCT" secondAttribute="leading" id="Pj6-dS-ehl"/>
+                            <constraint firstItem="Vxd-ez-srh" firstAttribute="leading" secondItem="84b-xe-GU7" secondAttribute="leading" id="QH4-g9-2xs"/>
+                            <constraint firstItem="XHr-07-MUv" firstAttribute="leading" secondItem="UtD-J4-Npb" secondAttribute="leading" id="QqM-V1-HWG"/>
+                            <constraint firstItem="NID-GW-Uli" firstAttribute="centerY" secondItem="xin-wE-Dy6" secondAttribute="centerY" multiplier="1035/677" id="UwD-0C-W3c"/>
+                            <constraint firstItem="YHj-wu-zSj" firstAttribute="leading" secondItem="Vxd-ez-srh" secondAttribute="leading" id="Yax-sI-idd"/>
+                            <constraint firstItem="YHj-wu-zSj" firstAttribute="centerY" secondItem="xin-wE-Dy6" secondAttribute="centerY" multiplier="1048/677" id="ZvD-U2-aTG"/>
+                            <constraint firstItem="GHM-46-fbl" firstAttribute="leading" secondItem="Vxd-ez-srh" secondAttribute="leading" id="aLM-sp-gv2"/>
+                            <constraint firstItem="NID-GW-Uli" firstAttribute="trailing" secondItem="YHj-wu-zSj" secondAttribute="trailing" id="cq6-gn-1iG"/>
+                            <constraint firstItem="GHM-46-fbl" firstAttribute="centerY" secondItem="xin-wE-Dy6" secondAttribute="centerY" multiplier="965/677" id="eqk-6e-FkP"/>
+                            <constraint firstItem="mey-HO-rCT" firstAttribute="centerY" secondItem="GHM-46-fbl" secondAttribute="centerY" id="fCK-7J-1ru"/>
+                            <constraint firstItem="uBZ-Uv-zcp" firstAttribute="centerX" secondItem="xin-wE-Dy6" secondAttribute="centerX" multiplier="371/375" id="fbG-Om-iGg"/>
+                            <constraint firstItem="dmS-uD-TaF" firstAttribute="leading" secondItem="84b-xe-GU7" secondAttribute="leading" id="gWO-qK-6q1"/>
+                            <constraint firstItem="lAX-QI-3MC" firstAttribute="centerY" secondItem="YHj-wu-zSj" secondAttribute="centerY" id="hOv-VP-aMF"/>
+                            <constraint firstItem="YVc-Gd-S5f" firstAttribute="leading" secondItem="84b-xe-GU7" secondAttribute="leading" id="hrs-t3-t5w"/>
+                            <constraint firstItem="YVc-Gd-S5f" firstAttribute="centerY" secondItem="xin-wE-Dy6" secondAttribute="centerY" multiplier="519/677" id="mak-Rb-jHZ"/>
+                            <constraint firstItem="izC-o8-6Ly" firstAttribute="centerY" secondItem="xin-wE-Dy6" secondAttribute="centerY" multiplier="602/677" id="mkH-4J-nni"/>
+                            <constraint firstItem="dmS-uD-TaF" firstAttribute="centerY" secondItem="xin-wE-Dy6" secondAttribute="centerY" multiplier="323/677" id="opb-Kp-q0S"/>
+                            <constraint firstItem="5Jb-8p-UTU" firstAttribute="centerY" secondItem="xin-wE-Dy6" secondAttribute="centerY" multiplier="1217/677" id="pI3-ET-aBg"/>
+                            <constraint firstItem="we7-Xh-52O" firstAttribute="centerY" secondItem="xin-wE-Dy6" secondAttribute="centerY" multiplier="819.5/677" id="sVE-b9-tMp"/>
+                            <constraint firstItem="84b-xe-GU7" firstAttribute="centerX" secondItem="xin-wE-Dy6" secondAttribute="centerX" multiplier="70/375" id="t6F-Wu-XPP"/>
+                            <constraint firstItem="we7-Xh-52O" firstAttribute="leading" secondItem="Vxd-ez-srh" secondAttribute="leading" id="tlw-1I-S9r"/>
+                            <constraint firstItem="UtD-J4-Npb" firstAttribute="centerX" secondItem="xin-wE-Dy6" secondAttribute="centerX" multiplier="470/375" id="vAy-Ki-HuX"/>
+                            <constraint firstItem="uBZ-Uv-zcp" firstAttribute="centerY" secondItem="we7-Xh-52O" secondAttribute="centerY" id="ySa-nJ-3xy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9Vq-ry-3d6"/>
+                    </view>
+                    <connections>
+                        <outlet property="heightTextField" destination="YHj-wu-zSj" id="SLh-f1-KBH"/>
+                        <outlet property="heightWarningImg" destination="NID-GW-Uli" id="bH0-uj-Xdo"/>
+                        <outlet property="weightTextField" destination="lAX-QI-3MC" id="bxG-Gg-WZL"/>
+                        <outlet property="weightWarningImg" destination="6Pb-L7-Cqo" id="Fp9-IJ-J5w"/>
+                        <outletCollection property="genderButton" destination="we7-Xh-52O" collectionClass="NSMutableArray" id="2cc-As-tlP"/>
+                        <outletCollection property="genderButton" destination="uBZ-Uv-zcp" collectionClass="NSMutableArray" id="Bgw-Va-e3r"/>
+                        <outletCollection property="genderButton" destination="we7-Xh-52O" collectionClass="NSMutableArray" id="vNz-GC-va1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZDV-mx-HTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2548" y="139.880059970015"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_back.png" width="15" height="29.5"/>
+        <image name="icon_clock.png" width="127" height="127"/>
+        <image name="icon_close.png" width="23" height="23"/>
+        <image name="icon_front.png" width="11.5" height="22"/>
+        <image name="icon_info_logo.png" width="107.5" height="63"/>
+        <image name="icon_warning.png" width="26" height="26"/>
+    </resources>
+</document>
