@@ -133,10 +133,34 @@ class WaveProgressView: UIView {
         layer.addSublayer(realWaveLayer)
         layer.addSublayer(maskWaveLayer)
         
+        // 물결 뒷배경 Gradient 처리
+        let gradLayer1 = CAGradientLayer()
+        gradLayer1.frame = bounds
+        gradLayer1.colors = [
+            UIColor.init(hex: 0x60DDB4).cgColor,
+            UIColor.init(hex: 0x62CBEA).cgColor,
+        ]
+        gradLayer1.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradLayer1.endPoint = CGPoint(x: 1.0, y: 0.5)
+        layer.addSublayer(gradLayer1)
+
+        let gradLayer2 = CAGradientLayer()
+        gradLayer2.frame = bounds
+        gradLayer2.colors = [
+            UIColor.init(hex: 0x60DDB4).cgColor,
+            UIColor.init(hex: 0x62CBEA).cgColor,
+        ]
+        gradLayer2.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradLayer2.endPoint = CGPoint(x: 1.0, y: 0.5)
+        layer.addSublayer(gradLayer2)
+
         realWaveColor = color
-        maskWaveColor = color.withAlphaComponent(0.5)
         realWaveLayer.fillColor = realWaveColor.cgColor     // 레이어 채우기 색상
+        gradLayer1.mask = realWaveLayer
+        
+        maskWaveColor = color.withAlphaComponent(0.5)
         maskWaveLayer.fillColor = maskWaveColor.cgColor
+        gradLayer2.mask = maskWaveLayer
     }
     
     // 물결 색상
@@ -359,6 +383,7 @@ extension WaveProgressView {
         realPath.closeSubpath()
         // 3.배정 경로
         realWaveLayer.path = realPath
+//        realWaveLayer.mask
         maskWaveLayer.path = maskPath
     }
 }

@@ -47,7 +47,8 @@ class CalorieMainViewController: UIViewController {
         }
         
         // GUI 초기화
-        vWaveGage!.initGUI(color: UIColor.init(hex: 0x60DDB4))
+        vWaveGage!.initGUI(color: UIColor.black)
+//        vWaveGage!.initGUI(color: UIColor.init(hex: 0x60DDB4))
     }
     
 
