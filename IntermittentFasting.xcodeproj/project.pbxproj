@@ -44,6 +44,13 @@
 		6098ECA22269D9B90042EA96 /* icon_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6098EC9F2269D9B80042EA96 /* icon_close@2x.png */; };
 		6098ECA32269D9B90042EA96 /* icon_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6098ECA02269D9B90042EA96 /* icon_close@3x.png */; };
 		6098ECA52269E9C10042EA96 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098ECA42269E9C10042EA96 /* CustomLabel.swift */; };
+		9E7F09A5226E90F10017DD47 /* CalorieMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7F09A4226E90F10017DD47 /* CalorieMainViewController.swift */; };
+		9E7F09A7226E91040017DD47 /* WeightMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7F09A6226E91040017DD47 /* WeightMainViewController.swift */; };
+		9E7F09A9226E91130017DD47 /* HomeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7F09A8226E91130017DD47 /* HomeMainViewController.swift */; };
+		9E7F09AB226E911F0017DD47 /* BoardMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7F09AA226E911F0017DD47 /* BoardMainViewController.swift */; };
+		9E7F09AD226E912E0017DD47 /* SettingsMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7F09AC226E912E0017DD47 /* SettingsMainViewController.swift */; };
+		9E7F09B0226EA1450017DD47 /* WaveProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7F09AF226EA1450017DD47 /* WaveProgressView.swift */; };
+		9E7F09B3226EA1750017DD47 /* RoundLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7F09B2226EA1750017DD47 /* RoundLineView.swift */; };
 		9E9A6B9D226D4F42008696FA /* icon_home_on@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9A6B89226D4F41008696FA /* icon_home_on@3x.png */; };
 		9E9A6B9E226D4F42008696FA /* icon_personal_settings_off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9A6B8A226D4F41008696FA /* icon_personal_settings_off@3x.png */; };
 		9E9A6B9F226D4F42008696FA /* icon_personal_settings_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9A6B8B226D4F41008696FA /* icon_personal_settings_off@2x.png */; };
@@ -110,6 +117,13 @@
 		6098ECA02269D9B90042EA96 /* icon_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_close@3x.png"; sourceTree = "<group>"; };
 		6098ECA42269E9C10042EA96 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		97680E891D7EEB4857C71F33 /* Pods-IntermittentFasting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntermittentFasting.release.xcconfig"; path = "Pods/Target Support Files/Pods-IntermittentFasting/Pods-IntermittentFasting.release.xcconfig"; sourceTree = "<group>"; };
+		9E7F09A4226E90F10017DD47 /* CalorieMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieMainViewController.swift; sourceTree = "<group>"; };
+		9E7F09A6226E91040017DD47 /* WeightMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightMainViewController.swift; sourceTree = "<group>"; };
+		9E7F09A8226E91130017DD47 /* HomeMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainViewController.swift; sourceTree = "<group>"; };
+		9E7F09AA226E911F0017DD47 /* BoardMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMainViewController.swift; sourceTree = "<group>"; };
+		9E7F09AC226E912E0017DD47 /* SettingsMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMainViewController.swift; sourceTree = "<group>"; };
+		9E7F09AF226EA1450017DD47 /* WaveProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveProgressView.swift; sourceTree = "<group>"; };
+		9E7F09B2226EA1750017DD47 /* RoundLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundLineView.swift; sourceTree = "<group>"; };
 		9E9A6B89226D4F41008696FA /* icon_home_on@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_home_on@3x.png"; sourceTree = "<group>"; };
 		9E9A6B8A226D4F41008696FA /* icon_personal_settings_off@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_personal_settings_off@3x.png"; sourceTree = "<group>"; };
 		9E9A6B8B226D4F41008696FA /* icon_personal_settings_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_personal_settings_off@2x.png"; sourceTree = "<group>"; };
@@ -238,6 +252,11 @@
 		6098EC762268B25C0042EA96 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9E7F09A3226E90CA0017DD47 /* 1. Calorie */,
+				9E7F09A0226E90C90017DD47 /* 2. Weight */,
+				9E7F09A1226E90C90017DD47 /* 3. Home */,
+				9E7F099F226E90C90017DD47 /* 4. Board */,
+				9E7F09A2226E90CA0017DD47 /* 5. Settings */,
 				606A40EE2264CE42004B9329 /* ViewController.swift */,
 				6098EC932268D6820042EA96 /* InfoViewController.swift */,
 				6098EC912268CA970042EA96 /* InputInfoViewController.swift */,
@@ -268,12 +287,70 @@
 		6098EC792268B28C0042EA96 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9E7F09B1226EA1750017DD47 /* RoundLine */,
+				9E7F09AE226EA1450017DD47 /* WaveProgress */,
 				605B40842266F128006D723A /* Gradation.swift */,
 				605919692266DBCD0040ED9F /* ButtonLayer.swift */,
 				6098EC7A2268B30A0042EA96 /* TextFieldLayer.swift */,
 				6098ECA42269E9C10042EA96 /* CustomLabel.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9E7F099F226E90C90017DD47 /* 4. Board */ = {
+			isa = PBXGroup;
+			children = (
+				9E7F09AA226E911F0017DD47 /* BoardMainViewController.swift */,
+			);
+			path = "4. Board";
+			sourceTree = "<group>";
+		};
+		9E7F09A0226E90C90017DD47 /* 2. Weight */ = {
+			isa = PBXGroup;
+			children = (
+				9E7F09A6226E91040017DD47 /* WeightMainViewController.swift */,
+			);
+			path = "2. Weight";
+			sourceTree = "<group>";
+		};
+		9E7F09A1226E90C90017DD47 /* 3. Home */ = {
+			isa = PBXGroup;
+			children = (
+				9E7F09A8226E91130017DD47 /* HomeMainViewController.swift */,
+			);
+			path = "3. Home";
+			sourceTree = "<group>";
+		};
+		9E7F09A2226E90CA0017DD47 /* 5. Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9E7F09AC226E912E0017DD47 /* SettingsMainViewController.swift */,
+			);
+			path = "5. Settings";
+			sourceTree = "<group>";
+		};
+		9E7F09A3226E90CA0017DD47 /* 1. Calorie */ = {
+			isa = PBXGroup;
+			children = (
+				9E7F09A4226E90F10017DD47 /* CalorieMainViewController.swift */,
+			);
+			path = "1. Calorie";
+			sourceTree = "<group>";
+		};
+		9E7F09AE226EA1450017DD47 /* WaveProgress */ = {
+			isa = PBXGroup;
+			children = (
+				9E7F09AF226EA1450017DD47 /* WaveProgressView.swift */,
+			);
+			path = WaveProgress;
+			sourceTree = "<group>";
+		};
+		9E7F09B1226EA1750017DD47 /* RoundLine */ = {
+			isa = PBXGroup;
+			children = (
+				9E7F09B2226EA1750017DD47 /* RoundLineView.swift */,
+			);
+			path = RoundLine;
 			sourceTree = "<group>";
 		};
 		9E9A6B87226D4F41008696FA /* images */ = {
@@ -501,14 +578,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				6006F2DC2269F83C0085728F /* UIColor+hexString.swift in Sources */,
+				9E7F09A7226E91040017DD47 /* WeightMainViewController.swift in Sources */,
 				6059196A2266DBCD0040ED9F /* ButtonLayer.swift in Sources */,
+				9E7F09B3226EA1750017DD47 /* RoundLineView.swift in Sources */,
+				9E7F09A9226E91130017DD47 /* HomeMainViewController.swift in Sources */,
+				9E7F09B0226EA1450017DD47 /* WaveProgressView.swift in Sources */,
 				9E9A6BB4226D5172008696FA /* TabbarViewController.swift in Sources */,
 				6098EC922268CA970042EA96 /* InputInfoViewController.swift in Sources */,
+				9E7F09AB226E911F0017DD47 /* BoardMainViewController.swift in Sources */,
 				606A40EF2264CE42004B9329 /* ViewController.swift in Sources */,
 				6098EC942268D6820042EA96 /* InfoViewController.swift in Sources */,
+				9E7F09AD226E912E0017DD47 /* SettingsMainViewController.swift in Sources */,
 				6098EC7B2268B30A0042EA96 /* TextFieldLayer.swift in Sources */,
 				605B40852266F128006D723A /* Gradation.swift in Sources */,
 				606A40ED2264CE42004B9329 /* AppDelegate.swift in Sources */,
+				9E7F09A5226E90F10017DD47 /* CalorieMainViewController.swift in Sources */,
 				6098ECA52269E9C10042EA96 /* CustomLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
