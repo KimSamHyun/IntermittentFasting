@@ -19,7 +19,7 @@ class CalorieMainViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         sValue.minimumValue = 0
-        sValue.maximumValue = 1000
+        sValue.maximumValue = 1640
         sValue.setValue(820, animated: false)
         
         if let waveView = self.vWaveGage {
@@ -62,6 +62,15 @@ class CalorieMainViewController: UIViewController {
     }
     */
 
+    // MARK: - Action
+    @IBAction func onCalendarClick(_ sender: UIButton) {
+        if let storyboard = AppDelegate.sharedNamedStroyBoard("Common") as? UIStoryboard {
+            
+            let calendarVC: CalendarViewController = storyboard.instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
+            self.present(calendarVC, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         self.vWaveGage!.updateFrame(value: sender.value)
     }

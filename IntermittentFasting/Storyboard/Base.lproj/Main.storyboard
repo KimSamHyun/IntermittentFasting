@@ -405,9 +405,22 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBA-sf-Nlb">
+                                        <rect key="frame" x="321" y="14" width="36" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="ZCn-De-zxe"/>
+                                            <constraint firstAttribute="width" constant="36" id="nJn-hA-H4J"/>
+                                        </constraints>
+                                        <state key="normal" image="btn_calendar.png"/>
+                                        <connections>
+                                            <action selector="onCalendarClick:" destination="nPB-hY-JuL" eventType="touchUpInside" id="jRz-dG-Uw3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="xBA-sf-Nlb" firstAttribute="centerY" secondItem="Kdh-v6-19o" secondAttribute="centerY" id="1Vp-zY-WgN"/>
+                                    <constraint firstAttribute="trailing" secondItem="xBA-sf-Nlb" secondAttribute="trailing" constant="18" id="40C-CW-Cmi"/>
                                     <constraint firstAttribute="height" constant="64" id="DMw-S0-RFM"/>
                                     <constraint firstItem="7sj-30-miZ" firstAttribute="centerX" secondItem="Kdh-v6-19o" secondAttribute="centerX" id="egc-GQ-wfu"/>
                                     <constraint firstItem="7sj-30-miZ" firstAttribute="centerY" secondItem="Kdh-v6-19o" secondAttribute="centerY" id="f0E-Fw-hLz"/>
@@ -416,9 +429,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xh-pl-fs4" customClass="RoundLineView" customModule="IntermittentFasting" customModuleProvider="target">
                                 <rect key="frame" x="72.5" y="91" width="230" height="230"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kg4-za-0jO" customClass="WaveProgressView" customModule="LCWaveViewExample" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kg4-za-0jO" customClass="WaveProgressView" customModule="IntermittentFasting" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="214" height="214"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="214" id="4HU-cX-RQy"/>
                                             <constraint firstAttribute="height" constant="214" id="xtz-uU-3bP"/>
@@ -478,6 +491,32 @@
                                     <action selector="sliderValueChanged:" destination="nPB-hY-JuL" eventType="valueChanged" id="qtS-mS-Dns"/>
                                 </connections>
                             </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGe-Bw-eY4">
+                                <rect key="frame" x="84" y="334" width="207" height="18"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일일 권장 섭취칼로리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2e-b9-ZqB">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1300kcal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dai-aW-dqS">
+                                        <rect key="frame" x="140" y="0.0" width="67" height="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Dai-aW-dqS" firstAttribute="leading" secondItem="I2e-b9-ZqB" secondAttribute="trailing" constant="15" id="HZa-iv-cqQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dai-aW-dqS" secondAttribute="bottom" id="PGu-rJ-mcf"/>
+                                    <constraint firstItem="I2e-b9-ZqB" firstAttribute="leading" secondItem="AGe-Bw-eY4" secondAttribute="leading" id="PZY-9r-BnP"/>
+                                    <constraint firstItem="Dai-aW-dqS" firstAttribute="top" secondItem="AGe-Bw-eY4" secondAttribute="top" id="X6V-I1-aqP"/>
+                                    <constraint firstItem="I2e-b9-ZqB" firstAttribute="centerY" secondItem="AGe-Bw-eY4" secondAttribute="centerY" id="f6I-hZ-HbP"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dai-aW-dqS" secondAttribute="trailing" id="vfl-WK-SDP"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -487,7 +526,9 @@
                             <constraint firstItem="Kdh-v6-19o" firstAttribute="trailing" secondItem="TdE-pT-sTP" secondAttribute="trailing" id="DyD-LS-14a"/>
                             <constraint firstItem="TdE-pT-sTP" firstAttribute="trailing" secondItem="K6c-Fm-fz5" secondAttribute="trailing" constant="20" id="FeM-XS-PKQ"/>
                             <constraint firstItem="K6c-Fm-fz5" firstAttribute="leading" secondItem="TdE-pT-sTP" secondAttribute="leading" constant="20" id="W4C-r4-YuK"/>
+                            <constraint firstItem="AGe-Bw-eY4" firstAttribute="top" secondItem="4xh-pl-fs4" secondAttribute="bottom" constant="13" id="Zbk-9h-Nmc"/>
                             <constraint firstItem="4xh-pl-fs4" firstAttribute="centerX" secondItem="FyD-wE-hDq" secondAttribute="centerX" id="c2Y-Bu-HHU"/>
+                            <constraint firstItem="AGe-Bw-eY4" firstAttribute="centerX" secondItem="FyD-wE-hDq" secondAttribute="centerX" id="whl-T4-zAc"/>
                             <constraint firstItem="K6c-Fm-fz5" firstAttribute="top" secondItem="4xh-pl-fs4" secondAttribute="bottom" constant="50" id="zbE-RB-KZC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TdE-pT-sTP"/>
@@ -989,6 +1030,7 @@
     </scenes>
     <resources>
         <image name="bg_home_tab.png" width="80" height="73"/>
+        <image name="btn_calendar.png" width="25" height="28"/>
         <image name="icon_back.png" width="15" height="29"/>
         <image name="icon_board_off.png" width="30" height="28"/>
         <image name="icon_board_on.png" width="30" height="28"/>
