@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Calendar View Controller-->
+        <!--Calendar Popup-->
         <scene sceneID="9Dw-Ij-XJT">
             <objects>
-                <viewController storyboardIdentifier="CalendarViewController" id="QjA-TO-9Zy" customClass="CalendarViewController" customModule="IntermittentFasting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalendarPopup" id="QjA-TO-9Zy" customClass="CalendarPopup" customModule="IntermittentFasting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wnk-5C-MjK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,6 +35,9 @@
                                                     <constraint firstAttribute="height" constant="36" id="hXJ-Mt-eM9"/>
                                                 </constraints>
                                                 <state key="normal" image="btn_prev.png"/>
+                                                <connections>
+                                                    <action selector="onPrevMonthClick:" destination="QjA-TO-9Zy" eventType="touchUpInside" id="g8F-i8-jKm"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x73-aL-YXR">
                                                 <rect key="frame" x="260" y="14" width="36" height="36"/>
@@ -43,6 +46,9 @@
                                                     <constraint firstAttribute="width" constant="36" id="xmZ-WT-C3X"/>
                                                 </constraints>
                                                 <state key="normal" image="btn_next.png"/>
+                                                <connections>
+                                                    <action selector="onNextMonthClick:" destination="QjA-TO-9Zy" eventType="touchUpInside" id="6mf-BB-ZIB"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018년 4월" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUH-j8-FXk">
                                                 <rect key="frame" x="103" y="20.5" width="94" height="23"/>
@@ -278,6 +284,9 @@
                                         <state key="normal" title="완료">
                                             <color key="titleColor" red="0.37647058823529411" green="0.8666666666666667" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onConfirmClick:" destination="QjA-TO-9Zy" eventType="touchUpInside" id="4zg-WQ-xfu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -333,6 +342,11 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="lbTitle" destination="mUH-j8-FXk" id="iPk-cc-1E0"/>
+                        <outlet property="vContent" destination="1s9-kH-gwp" id="Cdf-4G-48s"/>
+                        <outlet property="vDimmed" destination="Qyh-wx-epZ" id="E0s-TK-xom"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQ8-wy-82U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

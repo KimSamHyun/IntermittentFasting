@@ -64,11 +64,15 @@ class CalorieMainViewController: UIViewController {
 
     // MARK: - Action
     @IBAction func onCalendarClick(_ sender: UIButton) {
-        if let storyboard = AppDelegate.sharedNamedStroyBoard("Common") as? UIStoryboard {
+        let popupVC = CalendarPopup.calendarPopup(yyyymm: "201904")
+        popupVC.addActionConfirmClick {
             
-            let calendarVC: CalendarViewController = storyboard.instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
-            self.present(calendarVC, animated: true, completion: nil)
         }
+//        if let storyboard = AppDelegate.sharedNamedStroyBoard("Common") as? UIStoryboard {
+//
+//            let calendarVC: CalendarViewController = storyboard.instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
+//            self.present(calendarVC, animated: true, completion: nil)
+//        }
     }
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
