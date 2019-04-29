@@ -9,7 +9,39 @@
 import UIKit
 import Foundation
 
+// 날짜 정보
+struct DayInfo {
+    var year: Int
+    var month: Int
+    var day: Int
+    // year * 10000 + month * 100 + day
+    var cellIndex: Int
+    // 보여주는 월의 이전(-1), 현재(0), 다음달(1) 표시
+    var monthDirection: Int
+    // 일요일
+    var isHoliday: Bool
+    
+    init(year: Int,
+         month: Int,
+         day: Int,
+         cellIndex: Int,
+         monthDirection: Int,
+         isHoliday: Bool = false) {
+        
+        self.year = year
+        self.month = month
+        self.day = day
+        self.cellIndex = cellIndex
+        self.monthDirection = monthDirection
+        self.isHoliday = isHoliday
+    }
+}
+
 class CalendarManager {
+    
+    // 날짜 선택
+    static var curSelectedDay: Int = -1
+    static var newSelectedDay: Int = -1
 		
 	// 월간 문자
 	static func getMonthString(monthIndex:Int) -> String {
@@ -108,10 +140,10 @@ class CalendarManager {
     }
     
     // 년/월에 맞는 날짜 목록 얻어오기
-    static func getMonthToDays(year:Int, month:Int) -> [[String: Any]] {
-        
+    static func getMonthToDays(year:Int, month:Int) -> [DayInfo] {
+                
         // 선택한 달의 날짜 목록
-        var arrCurentMoth:[[String: Any]] = []
+        var arrCurentMoth:[DayInfo] = []
         
         // 이번달
         let curYear: Int = year
@@ -138,9 +170,9 @@ class CalendarManager {
         
         // 공휴일 정보 체크
         // 선택한 년/월 인덱스
-        let curIndex = curYear * 100 + curMonth
-        let prevIndex = prevYear * 100 + prevMonth
-        let nextIndex = nextYear * 100 + nextMonth
+//        let curIndex = curYear * 100 + curMonth
+//        let prevIndex = prevYear * 100 + prevMonth
+//        let nextIndex = nextYear * 100 + nextMonth
         
         // 이전달 정보
         var comps = DateComponents()
@@ -186,23 +218,20 @@ class CalendarManager {
             countDay += 1
             
             let cellIndex = prevYear * 10000 + prevMonth * 100 + countDay
-            var dicDayData = [String: Any]()
-            dicDayData["year"] = prevYear
-            dicDayData["month"] = prevMonth
-            dicDayData["day"] = countDay
-            dicDayData["cellIndex"] = cellIndex
-            // 보여주는 월의 이전(-1), 현재(0), 다음달(1) 표시
-            dicDayData["monthDirection"] = -1
-
+            var dayInfo: DayInfo = DayInfo(year: prevYear,
+                                           month: prevMonth,
+                                           day: countDay,
+                                           cellIndex: cellIndex,
+                                           monthDirection: -1)
             // 일요일 체크
             if (dayCount % 7) == 0 {
-                dicDayData["isHoliday"] = true
+                dayInfo.isHoliday = true
             }
             else {
-                dicDayData["isHoliday"] = false
+                dayInfo.isHoliday = false
             }
 
-            arrCurentMoth.append(dicDayData)
+            arrCurentMoth.append(dayInfo)
             
             dayCount += 1
         }
@@ -213,22 +242,21 @@ class CalendarManager {
             countDay += 1
 
             let cellIndex = curYear * 10000 + curMonth * 100 + countDay
-            var dicDayData = [String: Any]()
-            dicDayData["year"] = curYear
-            dicDayData["month"] = curMonth
-            dicDayData["day"] = countDay
-            dicDayData["cellIndex"] = cellIndex
-            dicDayData["monthDirection"] = 0
+            var dayInfo: DayInfo = DayInfo(year: curYear,
+                                           month: curMonth,
+                                           day: countDay,
+                                           cellIndex: cellIndex,
+                                           monthDirection: 0)
 
             // 일요일 체크
             if (dayCount % 7) == 0 {
-                dicDayData["isHoliday"] = true
+                dayInfo.isHoliday = true
             }
             else {
-                dicDayData["isHoliday"] = false
+                dayInfo.isHoliday = false
             }
             
-            arrCurentMoth.append(dicDayData)
+            arrCurentMoth.append(dayInfo)
                         
             dayCount += 1
         }
@@ -242,16 +270,14 @@ class CalendarManager {
                 countDay += 1
 
                 let cellIndex = nextYear * 10000 + nextMonth * 100 + countDay
-                var dicDayData = [String: Any]()
-                dicDayData["year"] = nextYear
-                dicDayData["month"] = nextMonth
-                dicDayData["day"] = countDay
-                dicDayData["cellIndex"] = cellIndex
-                dicDayData["monthDirection"] = 1
-                dicDayData["isHoliday"] = false
-                dicDayData["holidayName"] = ""
+                let dayInfo: DayInfo = DayInfo(year: nextYear,
+                                               month: nextMonth,
+                                               day: countDay,
+                                               cellIndex: cellIndex,
+                                               monthDirection: 1,
+                                               isHoliday: false)
                 
-                arrCurentMoth.append(dicDayData)
+                arrCurentMoth.append(dayInfo)
             }
         }
 

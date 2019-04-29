@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1s9-kH-gwp" customClass="RoundLineView" customModule="IntermittentFasting" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1s9-kH-gwp" customClass="RoundLineView" customModule="IntermittentFasting" customModuleProvider="target">
                                 <rect key="frame" x="37.5" y="138.5" width="300" height="390"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1aO-gU-TzH">
@@ -231,7 +231,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2iH-yi-FdR">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CalendarDayCell" id="2iH-yi-FdR" customClass="CalendarDayCell" customModule="IntermittentFasting" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -271,8 +271,16 @@
                                                     <constraint firstItem="5nS-DC-rAC" firstAttribute="centerY" secondItem="8OK-YV-Hyb" secondAttribute="centerY" id="QIG-YG-jPa"/>
                                                     <constraint firstItem="5nS-DC-rAC" firstAttribute="centerX" secondItem="8OK-YV-Hyb" secondAttribute="centerX" id="jHq-0o-Keg"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="lbDay" destination="5nS-DC-rAC" id="tXJ-lK-Lex"/>
+                                                    <outlet property="vSelectedCell" destination="8OK-YV-Hyb" id="YC8-fd-R7a"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="QjA-TO-9Zy" id="0sJ-3B-omi"/>
+                                            <outlet property="delegate" destination="QjA-TO-9Zy" id="Kmm-aH-FdJ"/>
+                                        </connections>
                                     </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBY-ms-7HD">
                                         <rect key="frame" x="237" y="342" width="50" height="36"/>
@@ -296,7 +304,7 @@
                                     <constraint firstItem="gEk-S3-BPC" firstAttribute="top" secondItem="3ea-Iw-Axz" secondAttribute="bottom" id="FMg-hl-AV1"/>
                                     <constraint firstAttribute="trailing" secondItem="1aO-gU-TzH" secondAttribute="trailing" id="GWa-kS-Kkp"/>
                                     <constraint firstAttribute="trailing" secondItem="sBY-ms-7HD" secondAttribute="trailing" constant="13" id="HdG-Df-0lT"/>
-                                    <constraint firstAttribute="height" constant="390" id="fh2-jH-Xpi"/>
+                                    <constraint firstAttribute="bottom" secondItem="gEk-S3-BPC" secondAttribute="bottom" constant="42" id="hzC-Qh-34I"/>
                                     <constraint firstItem="1aO-gU-TzH" firstAttribute="top" secondItem="1s9-kH-gwp" secondAttribute="top" id="i2R-Dc-tTE"/>
                                     <constraint firstItem="gEk-S3-BPC" firstAttribute="leading" secondItem="1s9-kH-gwp" secondAttribute="leading" constant="10" id="pvs-Fc-825"/>
                                     <constraint firstAttribute="trailing" secondItem="gEk-S3-BPC" secondAttribute="trailing" constant="10" id="wfW-T8-CLr"/>
@@ -343,6 +351,8 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="gEk-S3-BPC" id="gef-1Y-tPG"/>
+                        <outlet property="collectionViewHeightConstraint" destination="1ob-hi-cHb" id="NZy-LL-iAw"/>
                         <outlet property="lbTitle" destination="mUH-j8-FXk" id="iPk-cc-1E0"/>
                         <outlet property="vContent" destination="1s9-kH-gwp" id="Cdf-4G-48s"/>
                         <outlet property="vDimmed" destination="Qyh-wx-epZ" id="E0s-TK-xom"/>

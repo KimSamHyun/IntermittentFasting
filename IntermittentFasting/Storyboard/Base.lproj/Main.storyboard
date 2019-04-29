@@ -517,9 +517,21 @@
                                     <constraint firstAttribute="trailing" secondItem="Dai-aW-dqS" secondAttribute="trailing" id="vfl-WK-SDP"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QrJ-WB-p2W">
+                                <rect key="frame" x="302" y="595" width="57" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="Zpz-h3-1vV"/>
+                                    <constraint firstAttribute="width" constant="57" id="igP-IU-SF7"/>
+                                </constraints>
+                                <state key="normal" image="btn_food_add.png"/>
+                                <connections>
+                                    <action selector="onFoodAddClick:" destination="nPB-hY-JuL" eventType="touchUpInside" id="Sx5-BD-dpS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="TdE-pT-sTP" firstAttribute="bottom" secondItem="QrJ-WB-p2W" secondAttribute="bottom" constant="15" id="2HI-j0-mMB"/>
                             <constraint firstItem="4xh-pl-fs4" firstAttribute="top" secondItem="Kdh-v6-19o" secondAttribute="bottom" constant="7" id="4aK-9A-ruW"/>
                             <constraint firstItem="Kdh-v6-19o" firstAttribute="leading" secondItem="TdE-pT-sTP" secondAttribute="leading" id="8rF-Ne-bf1"/>
                             <constraint firstItem="Kdh-v6-19o" firstAttribute="top" secondItem="TdE-pT-sTP" secondAttribute="top" id="A3y-r1-jUQ"/>
@@ -527,6 +539,7 @@
                             <constraint firstItem="TdE-pT-sTP" firstAttribute="trailing" secondItem="K6c-Fm-fz5" secondAttribute="trailing" constant="20" id="FeM-XS-PKQ"/>
                             <constraint firstItem="K6c-Fm-fz5" firstAttribute="leading" secondItem="TdE-pT-sTP" secondAttribute="leading" constant="20" id="W4C-r4-YuK"/>
                             <constraint firstItem="AGe-Bw-eY4" firstAttribute="top" secondItem="4xh-pl-fs4" secondAttribute="bottom" constant="13" id="Zbk-9h-Nmc"/>
+                            <constraint firstItem="TdE-pT-sTP" firstAttribute="trailing" secondItem="QrJ-WB-p2W" secondAttribute="trailing" constant="16" id="ZjL-P5-XQk"/>
                             <constraint firstItem="4xh-pl-fs4" firstAttribute="centerX" secondItem="FyD-wE-hDq" secondAttribute="centerX" id="c2Y-Bu-HHU"/>
                             <constraint firstItem="AGe-Bw-eY4" firstAttribute="centerX" secondItem="FyD-wE-hDq" secondAttribute="centerX" id="whl-T4-zAc"/>
                             <constraint firstItem="K6c-Fm-fz5" firstAttribute="top" secondItem="4xh-pl-fs4" secondAttribute="bottom" constant="50" id="zbE-RB-KZC"/>
@@ -534,7 +547,9 @@
                         <viewLayoutGuide key="safeArea" id="TdE-pT-sTP"/>
                     </view>
                     <connections>
+                        <outlet property="btnFoodAdd" destination="QrJ-WB-p2W" id="aHy-Mk-oSp"/>
                         <outlet property="lbCalorie" destination="upA-oR-ebe" id="AoQ-zL-8Ca"/>
+                        <outlet property="lbTitle" destination="7sj-30-miZ" id="oDk-T3-swM"/>
                         <outlet property="sValue" destination="K6c-Fm-fz5" id="8vV-Zk-Cs8"/>
                         <outlet property="vWaveGage" destination="Kg4-za-0jO" id="Sii-V8-vMm"/>
                     </connections>
@@ -1031,6 +1046,7 @@
     <resources>
         <image name="bg_home_tab.png" width="80" height="73"/>
         <image name="btn_calendar.png" width="25" height="28"/>
+        <image name="btn_food_add.png" width="57" height="57"/>
         <image name="icon_back.png" width="15" height="29"/>
         <image name="icon_board_off.png" width="30" height="28"/>
         <image name="icon_board_on.png" width="30" height="28"/>
