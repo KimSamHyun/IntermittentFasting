@@ -15,6 +15,15 @@ class CalendarDayCell: UICollectionViewCell {
     func setCellInfo(_ infoData: DayInfo) {
         self.lbDay.text = "\(infoData.day)"
         
+        // 이번달
+        if infoData.monthDirection == 0 {
+            self.lbDay.textColor = UIColor.init(hex: 0x000000, alpha: 0.5)
+        }
+        // 이전달, 다음달
+        else {
+            self.lbDay.textColor = UIColor.init(hex: 0x000000, alpha: 0.2)
+        }
+        
         if CalendarManager.newSelectedDay == infoData.cellIndex {
             self.vSelectedCell.isHidden = false
         }

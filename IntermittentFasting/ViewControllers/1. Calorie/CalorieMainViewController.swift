@@ -101,16 +101,15 @@ class CalorieMainViewController: UIViewController {
             // 화면 갱신
             self.updateScreen()
         }
-//        if let storyboard = AppDelegate.sharedNamedStroyBoard("Common") as? UIStoryboard {
-//
-//            let calendarVC: CalendarViewController = storyboard.instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
-//            self.present(calendarVC, animated: true, completion: nil)
-//        }
     }
     
     // 음식 추가
     @IBAction func onFoodAddClick(_ sender: UIButton) {
-        
+        if let storyboard = AppDelegate.sharedNamedStroyBoard("Calorie") as? UIStoryboard {
+            
+            let foodAddVC: FoodAddViewController = storyboard.instantiateViewController(withIdentifier: "FoodAddViewController") as! FoodAddViewController
+            self.present(foodAddVC, animated: true, completion: nil)
+        }
     }
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {

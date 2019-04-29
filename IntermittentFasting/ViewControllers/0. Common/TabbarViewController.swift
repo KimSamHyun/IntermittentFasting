@@ -50,14 +50,17 @@ class TabbarViewController: UIViewController {
         vTabbar.layer.shadowOpacity = 0.03
         
         // 탭 메인 VC 로드
-        let calorieVC = self.storyboard?.instantiateViewController(withIdentifier: "CalorieMainViewController") as? CalorieMainViewController
+        var calorieVC: UIViewController?
+        if let storyboard = AppDelegate.sharedNamedStroyBoard("Calorie") as? UIStoryboard {
+            calorieVC = storyboard.instantiateViewController(withIdentifier: "CalorieMainViewController") as? CalorieMainViewController
+        }
         let weightVC = self.storyboard?.instantiateViewController(withIdentifier: "WeightMainViewController") as? WeightMainViewController
         let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeMainViewController") as? HomeMainViewController
         let boardVC = self.storyboard?.instantiateViewController(withIdentifier: "BoardMainViewController") as? BoardMainViewController
         let settingsVC = self.storyboard?.instantiateViewController(withIdentifier: "SettingsMainViewController") as? SettingsMainViewController
 
         // 탭컨트롤러 정보 세팅
-        let tc0: TabbarControll = TabbarControll(btnTab: btnTab0, lbTabTitle: lbTabTitle0, viewControllers: calorieVC)
+        let tc0: TabbarControll = TabbarControll(btnTab: btnTab0, lbTabTitle: lbTabTitle0, viewControllers: calorieVC!)
         arrTabbarControll += [tc0]
         let tc1: TabbarControll = TabbarControll(btnTab: btnTab1, lbTabTitle: lbTabTitle1, viewControllers: weightVC)
         arrTabbarControll += [tc1]
