@@ -48,6 +48,8 @@
 		9E236C612276B0FA00C122B2 /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E236C602276B0FA00C122B2 /* String+Substring.swift */; };
 		9E236C632276C0BB00C122B2 /* Calorie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E236C622276C0BB00C122B2 /* Calorie.storyboard */; };
 		9E236C652276C6A400C122B2 /* FoodAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E236C642276C6A400C122B2 /* FoodAddViewController.swift */; };
+		9E236C692276CF3F00C122B2 /* ViewPagerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E236C682276CF3F00C122B2 /* ViewPagerContent.swift */; };
+		9E236C6B2276D2B000C122B2 /* ViewPagerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E236C6A2276D2B000C122B2 /* ViewPagerMenu.swift */; };
 		9E606C4A227684B200A147A4 /* btn_food_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E606C48227684B200A147A4 /* btn_food_add@2x.png */; };
 		9E606C4B227684B200A147A4 /* btn_food_add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E606C49227684B200A147A4 /* btn_food_add@3x.png */; };
 		9E7F09A5226E90F10017DD47 /* CalorieMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7F09A4226E90F10017DD47 /* CalorieMainViewController.swift */; };
@@ -142,6 +144,8 @@
 		9E236C602276B0FA00C122B2 /* String+Substring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Substring.swift"; sourceTree = "<group>"; };
 		9E236C622276C0BB00C122B2 /* Calorie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calorie.storyboard; sourceTree = "<group>"; };
 		9E236C642276C6A400C122B2 /* FoodAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAddViewController.swift; sourceTree = "<group>"; };
+		9E236C682276CF3F00C122B2 /* ViewPagerContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPagerContent.swift; sourceTree = "<group>"; };
+		9E236C6A2276D2B000C122B2 /* ViewPagerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPagerMenu.swift; sourceTree = "<group>"; };
 		9E606C48227684B200A147A4 /* btn_food_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_food_add@2x.png"; sourceTree = "<group>"; };
 		9E606C49227684B200A147A4 /* btn_food_add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_food_add@3x.png"; sourceTree = "<group>"; };
 		9E7F09A4226E90F10017DD47 /* CalorieMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieMainViewController.swift; sourceTree = "<group>"; };
@@ -335,6 +339,7 @@
 		6098EC792268B28C0042EA96 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9E236C672276CF2800C122B2 /* ViewPagerContent */,
 				9E7F09B1226EA1750017DD47 /* RoundLine */,
 				9E7F09AE226EA1450017DD47 /* WaveProgress */,
 				605B40842266F128006D723A /* Gradation.swift */,
@@ -343,6 +348,15 @@
 				6098ECA42269E9C10042EA96 /* CustomLabel.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9E236C672276CF2800C122B2 /* ViewPagerContent */ = {
+			isa = PBXGroup;
+			children = (
+				9E236C682276CF3F00C122B2 /* ViewPagerContent.swift */,
+				9E236C6A2276D2B000C122B2 /* ViewPagerMenu.swift */,
+			);
+			path = ViewPagerContent;
 			sourceTree = "<group>";
 		};
 		9E7F099F226E90C90017DD47 /* 4. Board */ = {
@@ -743,8 +757,10 @@
 				606A40EF2264CE42004B9329 /* ViewController.swift in Sources */,
 				6098EC942268D6820042EA96 /* InfoViewController.swift in Sources */,
 				9E7F09AD226E912E0017DD47 /* SettingsMainViewController.swift in Sources */,
+				9E236C6B2276D2B000C122B2 /* ViewPagerMenu.swift in Sources */,
 				6098EC7B2268B30A0042EA96 /* TextFieldLayer.swift in Sources */,
 				605B40852266F128006D723A /* Gradation.swift in Sources */,
+				9E236C692276CF3F00C122B2 /* ViewPagerContent.swift in Sources */,
 				606A40ED2264CE42004B9329 /* AppDelegate.swift in Sources */,
 				9E7F09A5226E90F10017DD47 /* CalorieMainViewController.swift in Sources */,
 				9E236C612276B0FA00C122B2 /* String+Substring.swift in Sources */,

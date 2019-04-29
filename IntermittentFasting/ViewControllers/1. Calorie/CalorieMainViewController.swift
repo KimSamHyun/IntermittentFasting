@@ -35,6 +35,7 @@ class CalorieMainViewController: UIViewController {
             
             waveView.minimumValue = sValue.minimumValue;
             waveView.maximumValue = sValue.maximumValue;
+            waveView.limitValue = 1300
             waveView.value = sValue.value
             
             // 웨이프 프로그레스 원

@@ -43,6 +43,9 @@ class WaveProgressView: UIView {
     // default 1.0. the current value may change if outside new max value
     public var maximumValue: Float = 1
     
+    // 제한값
+    public var limitValue: Float = 0
+    
     /// 트루 웨이브 레이어 색상
     public var realWaveColor: UIColor = UIColor.white {
         didSet {
@@ -67,6 +70,12 @@ class WaveProgressView: UIView {
     
     /// 마스크 웨이브 레이어
     private lazy var maskWaveLayer: CAShapeLayer = CAShapeLayer()
+    
+    // 트루 웨이브 뒷배경
+    private var gradLayer1: CAGradientLayer = CAGradientLayer()
+    
+    // 마스크 웨이브 뒷배경
+    private var gradLayer2: CAGradientLayer = CAGradientLayer()
     
     /// 화면 새로 고침 빈도 타이머
     private var waveDisplayLink: CADisplayLink?
@@ -134,22 +143,12 @@ class WaveProgressView: UIView {
         layer.addSublayer(maskWaveLayer)
         
         // 물결 뒷배경 Gradient 처리
-        let gradLayer1 = CAGradientLayer()
         gradLayer1.frame = bounds
-        gradLayer1.colors = [
-            UIColor.init(hex: 0x60DDB4).cgColor,
-            UIColor.init(hex: 0x62CBEA).cgColor,
-        ]
         gradLayer1.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradLayer1.endPoint = CGPoint(x: 1.0, y: 0.5)
         layer.addSublayer(gradLayer1)
 
-        let gradLayer2 = CAGradientLayer()
         gradLayer2.frame = bounds
-        gradLayer2.colors = [
-            UIColor.init(hex: 0x60DDB4).cgColor,
-            UIColor.init(hex: 0x62CBEA).cgColor,
-        ]
         gradLayer2.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradLayer2.endPoint = CGPoint(x: 1.0, y: 0.5)
         layer.addSublayer(gradLayer2)
@@ -325,6 +324,20 @@ extension WaveProgressView {
         // 최소값이나 최대값과 같을 경우 파동을 없앤다.
         if value == minimumValue || value == maximumValue {
             isWaveAnimation = false
+        }
+        
+        // 값이 제한값을 넘어섰을때...
+        if limitValue < value {
+            let colors: [Any] = [UIColor.init(hex: 0xDD60B4).cgColor, UIColor.init(hex: 0xCB62EA).cgColor]
+            
+            gradLayer1.colors = colors
+            gradLayer2.colors = colors
+        }
+        else {
+            let colors: [Any] = [UIColor.init(hex: 0x60DDB4).cgColor, UIColor.init(hex: 0x62CBEA).cgColor]
+            
+            gradLayer1.colors = colors
+            gradLayer2.colors = colors
         }
         
         let width: CGFloat = frame.width
