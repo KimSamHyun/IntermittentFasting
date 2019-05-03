@@ -23,9 +23,9 @@ class ViewPagerMenu: UIScrollView {
     var delegateSub: ViewPagerMenuDelegate?
 
     // 인디게이터 뷰
-    var vIndicator: UIView? = nil
+    var vIndicator: UIView!
     
-    var vMenuContent: UIView? = nil
+    var vMenuContent: UIView!
 
     // 메뉴 버튼
     var arrMenuButtons: [UIButton] = []
@@ -34,7 +34,7 @@ class ViewPagerMenu: UIScrollView {
     func initMenuItems(_ viewPagerInfo: ViewPagerInfo) {
         
         self.vMenuContent = UIView(frame: self.bounds)
-        self.addSubview(self.vMenuContent!)
+        self.addSubview(self.vMenuContent)
         
         // 메뉴 버튼 타이틀
         var arrMenuInfos: [String] = []
@@ -47,6 +47,7 @@ class ViewPagerMenu: UIScrollView {
             }
         }
 
+		var fullWidth: CGFloat = 0;
         var buttonWidth: CGFloat = 0;
         let itemfont = UIFont.systemFont(ofSize: viewPagerInfo.menuButtonfontSize)
         var frame: CGRect = self.bounds
@@ -60,7 +61,10 @@ class ViewPagerMenu: UIScrollView {
             let textSize: CGSize = title.size(withAttributes: [NSAttributedString.Key.font: itemfont])
             let strikeWidth: CGFloat = textSize.width
             buttonWidth = strikeWidth + self.indicatorPlusWidth + 8
-            
+			
+			// 전체 메뉴버튼 길이
+            fullWidth += buttonWidth
+			
             // 첫번째 문자 사이즈
             if i == 0 {
                 firstTextSize = textSize
@@ -75,44 +79,29 @@ class ViewPagerMenu: UIScrollView {
             btnItem.tag = i
             btnItem.addTarget(self, action: #selector(self.onMenuItemClick(_:)), for: .touchUpInside)
             
-            self.vMenuContent!.addSubview(btnItem)
+            self.vMenuContent.addSubview(btnItem)
             
             self.arrMenuButtons += [btnItem]
             
             frame.origin.x += buttonWidth
             print(buttonWidth)
         }
+		
+		self.contentSize = CGSize(width: fullWidth, height: frame.height)
         
         // 인디게이터 뷰
         let indicatorX: CGFloat = self.indicatorPlusWidth / 2
         self.vIndicator = UIView(frame: CGRect(x: indicatorX, y: frame.height - indicatorHeight, width: firstTextSize.width + 8, height: indicatorHeight))
-        self.vIndicator!.backgroundColor = viewPagerInfo.menuButtonColorSelected
+        self.vIndicator.backgroundColor = viewPagerInfo.menuButtonColorSelected
         
-        self.vMenuContent!.addSubview(self.vIndicator!)
+        self.vMenuContent.addSubview(self.vIndicator)
     }
     
     // 화면 레이어 정보 갱신
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        let frame: CGRect = self.bounds
-        
-        var fullWidth: CGFloat = 0
-        for btnItem in arrMenuButtons {
-            fullWidth += btnItem.frame.width
-        }
-        
-        self.contentSize = CGSize(width: fullWidth, height: frame.height)
-        self.vMenuContent!.frame = CGRect(x: 0, y: 0, width: fullWidth, height: frame.height)
-        
-        // 메뉴폭이 지정 폭 보다 작으면 메뉴폭으로 지정
-//        var frame2: CGRect = self.frame
-//        if self.frame.width > fullWidth {
-////            frame.origin.x = 0.0
-//            frame2.size.width = fullWidth
-//            self.frame = frame2
-//        }
-    }
+
+	}
     
     // 메뉴탭 선택
     func setCurrentIndex(_ currentIndex: Int) {
@@ -150,12 +139,12 @@ class ViewPagerMenu: UIScrollView {
         
         // 인디게이트 위치 변경
         let indicatorX: CGFloat = indicatorCenterX - (indiatorWidth / 2.0)
-        var frame = self.vIndicator!.frame
+        var frame = self.vIndicator.frame
         
         frame.origin.x = indicatorX + self.indicatorPlusWidth / 2.0
         frame.size.width = indiatorWidth - self.indicatorPlusWidth
         
-        self.vIndicator!.frame = frame
+        self.vIndicator.frame = frame
     }
     
     /*

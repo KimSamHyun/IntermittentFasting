@@ -58,7 +58,8 @@ class ViewPagerContent: UIView {
     var viewPagerInfo: ViewPagerInfo?
     
     // 메뉴 탭바
-    var menuTabbar: ViewPagerMenu?
+    var menuTabbar: ViewPagerMenu!
+	var menuShadow: UIView!
 
     // 메뉴 컨텐츠
     var svContent: UIScrollView!
@@ -74,25 +75,25 @@ class ViewPagerContent: UIView {
         var frameContent: CGRect = self.bounds
         // 메뉴 탭
         var frameMenu: CGRect = frameContent
+		
         frameMenu.origin.x = viewPagerInfo.menuButtonOffsetX
         frameMenu.size.width -= viewPagerInfo.menuButtonOffsetX
         frameMenu.size.height = viewPagerInfo.menuButtonHeight
+		
+		self.menuShadow = UIView(frame: frameMenu)
+		self.menuShadow.backgroundColor = UIColor.white
         self.menuTabbar = ViewPagerMenu(frame: frameMenu)
-        self.menuTabbar!.initMenuItems(viewPagerInfo)
-        self.menuTabbar!.delegateSub = self
+        self.menuTabbar.initMenuItems(viewPagerInfo)
+        self.menuTabbar.delegateSub = self
+		
         // 스크롤 바 표시
-        self.menuTabbar!.showsHorizontalScrollIndicator = false
-        self.menuTabbar!.showsVerticalScrollIndicator = false
-
-        self.addSubview(self.menuTabbar!)
-
-        
+        self.menuTabbar.showsHorizontalScrollIndicator = false
+        self.menuTabbar.showsVerticalScrollIndicator = false
+		
         // 메뉴 컨텐츠
         frameContent.origin.y = frameMenu.size.height
         frameContent.size.height -= frameMenu.size.height
-        
-        print(frameContent)
-        
+		
         // 뷰페이저 VC를 닮을 스크롤뷰 추가
         self.svContent = UIScrollView(frame: frameContent)
         // 페이징 설정
@@ -108,11 +109,10 @@ class ViewPagerContent: UIView {
         
         self.svContent.contentSize = CGSize(width: frame.width * CGFloat(arrChildController.count), height: frame.height)
         
-        self.addSubview(svContent)
+        self.addSubview(self.svContent)
         
         frame = self.svContent.bounds
-        print(frame)
-        
+		
         for i in 0..<arrChildController.count {
             let vc: UIViewController = arrChildController[i]
             var frameTemp = frame
@@ -120,7 +120,17 @@ class ViewPagerContent: UIView {
             vc.view.frame = frameTemp
             self.svContent.addSubview(vc.view)
         }
-        
+
+		self.addSubview(self.menuShadow)
+		self.addSubview(self.menuTabbar)
+		
+		// 탭바 그림자 처리
+		self.menuShadow.layer.masksToBounds = false
+		self.menuShadow.layer.shadowColor = UIColor.black.cgColor
+		self.menuShadow.layer.shadowOffset = CGSize(width: 0, height: 5)
+		self.menuShadow.layer.shadowOpacity = 0.11
+
+		
         // 첫번째 메뉴 선택
         self.scrollMenuViewSelected(0)
     }
@@ -134,8 +144,13 @@ class ViewPagerContent: UIView {
         frameMenu.origin.x = self.viewPagerInfo!.menuButtonOffsetX
         frameMenu.size.width -= self.viewPagerInfo!.menuButtonOffsetX
         frameMenu.size.height = self.viewPagerInfo!.menuButtonHeight
-        self.menuTabbar!.frame = frameMenu
-        
+        self.menuTabbar.frame = frameMenu
+		
+		// 메뉴 그림자
+		var frameShadow: CGRect = self.bounds
+		frameShadow.size.height = self.viewPagerInfo!.menuButtonHeight
+		self.menuShadow.frame = frameShadow
+
         // 메뉴 컨텐츠
         var frame: CGRect = self.bounds
         frame.origin.y = self.viewPagerInfo!.menuButtonHeight
@@ -175,28 +190,32 @@ extension ViewPagerContent: UIScrollViewDelegate {
         let ratio: CGFloat =  (scrollView.contentOffset.x - oldPosX) / scrollView.frame.width
         let isToNextItem: Bool = (scrollView.contentOffset.x > oldPosX)
         let toIndex: Int = isToNextItem ? self.curPageIndex + 1 : self.curPageIndex - 1
-        // 일단 임시 처리
-        let length: CGFloat = self.menuTabbar!.contentSize.width - self.menuTabbar!.frame.width
+
+        let length: CGFloat = self.menuTabbar.contentSize.width - self.menuTabbar.frame.width
         let nextItemOffsetX: CGFloat = length * CGFloat(toIndex) / CGFloat((self.arrChildController.count - 1))
         let currentItemOffsetX: CGFloat = length * CGFloat(self.curPageIndex) / CGFloat((self.arrChildController.count - 1))
 
-        var offset: CGPoint = self.menuTabbar!.contentOffset
+        var offset: CGPoint = self.menuTabbar.contentOffset
         if toIndex >= 0 && toIndex < self.arrChildController.count {
             // MenuView Move
             if isToNextItem == true {
-                offset.x = (nextItemOffsetX - currentItemOffsetX) * ratio + currentItemOffsetX
-                self.menuTabbar!.setContentOffset(offset, animated: false)
-                self.menuTabbar!.indicatorViewFrameWithRatio(ratio: ratio * 1, isNextItem: isToNextItem, toIndex: self.curPageIndex)
+				if length > 0 {
+					offset.x = (nextItemOffsetX - currentItemOffsetX) * ratio + currentItemOffsetX
+					self.menuTabbar!.setContentOffset(offset, animated: false)
+				}
+                self.menuTabbar.indicatorViewFrameWithRatio(ratio: ratio * 1, isNextItem: isToNextItem, toIndex: self.curPageIndex)
             }
             else {
-                offset.x = currentItemOffsetX - (nextItemOffsetX - currentItemOffsetX) * ratio
-                self.menuTabbar!.setContentOffset(offset, animated: false)
-                self.menuTabbar!.indicatorViewFrameWithRatio(ratio: ratio * -1, isNextItem: isToNextItem, toIndex: toIndex)
+				if length > 0 {
+					offset.x = currentItemOffsetX - (nextItemOffsetX - currentItemOffsetX) * ratio
+					self.menuTabbar.setContentOffset(offset, animated: false)
+				}
+                self.menuTabbar.indicatorViewFrameWithRatio(ratio: ratio * -1, isNextItem: isToNextItem, toIndex: toIndex)
             }
         }
         else if toIndex < 0 {
-            self.menuTabbar!.setContentOffset(CGPoint.zero, animated: false)
-            self.menuTabbar!.indicatorViewFrameWithRatio(ratio: 0.0, isNextItem: true, toIndex: 0)
+            self.menuTabbar.setContentOffset(CGPoint.zero, animated: false)
+            self.menuTabbar.indicatorViewFrameWithRatio(ratio: 0.0, isNextItem: true, toIndex: 0)
         }
     }
     

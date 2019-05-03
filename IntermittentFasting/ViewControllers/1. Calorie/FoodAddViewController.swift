@@ -20,7 +20,7 @@ class FoodAddViewController: UIViewController {
         let foodFindVC = storyboard?.instantiateViewController(withIdentifier: "FoodFindViewController") as? FoodFindViewController
         foodFindVC!.title = "음식검색"
         let personalFoodVC = storyboard?.instantiateViewController(withIdentifier: "PersonalFoodViewController") as? PersonalFoodViewController
-        personalFoodVC!.title = "개인검색"
+        personalFoodVC!.title = "개인음식"
         let bookMarkVC = storyboard?.instantiateViewController(withIdentifier: "BookMarkViewController") as? BookMarkViewController
         bookMarkVC!.title = "즐겨찾기"
         
