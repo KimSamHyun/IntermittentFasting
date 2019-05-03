@@ -44,6 +44,9 @@
 		6098ECA22269D9B90042EA96 /* icon_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6098EC9F2269D9B80042EA96 /* icon_close@2x.png */; };
 		6098ECA32269D9B90042EA96 /* icon_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6098ECA02269D9B90042EA96 /* icon_close@3x.png */; };
 		6098ECA52269E9C10042EA96 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098ECA42269E9C10042EA96 /* CustomLabel.swift */; };
+		9E181415227BDDC9009314AF /* PersonalFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E181412227BDDC9009314AF /* PersonalFoodViewController.swift */; };
+		9E181416227BDDC9009314AF /* BookMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E181413227BDDC9009314AF /* BookMarkViewController.swift */; };
+		9E181417227BDDC9009314AF /* FoodFindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E181414227BDDC9009314AF /* FoodFindViewController.swift */; };
 		9E236C5F2276948C00C122B2 /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E236C5E2276948C00C122B2 /* CalendarDayCell.swift */; };
 		9E236C612276B0FA00C122B2 /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E236C602276B0FA00C122B2 /* String+Substring.swift */; };
 		9E236C632276C0BB00C122B2 /* Calorie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E236C622276C0BB00C122B2 /* Calorie.storyboard */; };
@@ -140,6 +143,9 @@
 		6098ECA02269D9B90042EA96 /* icon_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_close@3x.png"; sourceTree = "<group>"; };
 		6098ECA42269E9C10042EA96 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		97680E891D7EEB4857C71F33 /* Pods-IntermittentFasting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntermittentFasting.release.xcconfig"; path = "Pods/Target Support Files/Pods-IntermittentFasting/Pods-IntermittentFasting.release.xcconfig"; sourceTree = "<group>"; };
+		9E181412227BDDC9009314AF /* PersonalFoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalFoodViewController.swift; sourceTree = "<group>"; };
+		9E181413227BDDC9009314AF /* BookMarkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarkViewController.swift; sourceTree = "<group>"; };
+		9E181414227BDDC9009314AF /* FoodFindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodFindViewController.swift; sourceTree = "<group>"; };
 		9E236C5E2276948C00C122B2 /* CalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
 		9E236C602276B0FA00C122B2 /* String+Substring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Substring.swift"; sourceTree = "<group>"; };
 		9E236C622276C0BB00C122B2 /* Calorie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calorie.storyboard; sourceTree = "<group>"; };
@@ -396,6 +402,9 @@
 			children = (
 				9E7F09A4226E90F10017DD47 /* CalorieMainViewController.swift */,
 				9E236C642276C6A400C122B2 /* FoodAddViewController.swift */,
+				9E181413227BDDC9009314AF /* BookMarkViewController.swift */,
+				9E181414227BDDC9009314AF /* FoodFindViewController.swift */,
+				9E181412227BDDC9009314AF /* PersonalFoodViewController.swift */,
 			);
 			path = "1. Calorie";
 			sourceTree = "<group>";
@@ -748,6 +757,8 @@
 				9E7F09A9226E91130017DD47 /* HomeMainViewController.swift in Sources */,
 				9E236C652276C6A400C122B2 /* FoodAddViewController.swift in Sources */,
 				9E7F09B0226EA1450017DD47 /* WaveProgressView.swift in Sources */,
+				9E181417227BDDC9009314AF /* FoodFindViewController.swift in Sources */,
+				9E181416227BDDC9009314AF /* BookMarkViewController.swift in Sources */,
 				6098EC922268CA970042EA96 /* InputInfoViewController.swift in Sources */,
 				9E89D0C42272D34600F07DEF /* CalendarPopup.swift in Sources */,
 				9EE9F7952271367E001BD00A /* TabbarViewController.swift in Sources */,
@@ -760,6 +771,7 @@
 				9E236C6B2276D2B000C122B2 /* ViewPagerMenu.swift in Sources */,
 				6098EC7B2268B30A0042EA96 /* TextFieldLayer.swift in Sources */,
 				605B40852266F128006D723A /* Gradation.swift in Sources */,
+				9E181415227BDDC9009314AF /* PersonalFoodViewController.swift in Sources */,
 				9E236C692276CF3F00C122B2 /* ViewPagerContent.swift in Sources */,
 				606A40ED2264CE42004B9329 /* AppDelegate.swift in Sources */,
 				9E7F09A5226E90F10017DD47 /* CalorieMainViewController.swift in Sources */,
