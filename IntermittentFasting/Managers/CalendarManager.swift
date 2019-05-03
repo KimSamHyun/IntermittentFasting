@@ -54,17 +54,6 @@ class CalendarManager {
 		return arrMonthTitle[monthIndex-1]
 	}
 	
-	// 월간 뒷배경 이미지
-	static func getMonthImage(monthIndex:Int) -> UIImage? {
-		if monthIndex < 1 || monthIndex > 12 {
-			return nil
-		}
-		
-		let arrMonthImage: [String] = ["bg_img_month-1.jpg", "bg_img_month-2.jpg", "bg_img_month-3.jpg", "bg_img_month-4.jpg", "bg_img_month-5.jpg", "bg_img_month-6.jpg", "bg_img_month-7.jpg", "bg_img_month-8.jpg", "bg_img_month-9.jpg", "bg_img_month-10.jpg", "bg_img_month-11.jpg", "bg_img_month-12.jpg"]
-
-		return UIImage(named: arrMonthImage[monthIndex-1])
-	}
-	
 	// 주간 긴문자
 	static func getWeekFullString(weekIndex:Int) -> String {
 		if weekIndex < 0 || weekIndex > 6 {
