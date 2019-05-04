@@ -128,7 +128,7 @@ class ViewPagerContent: UIView {
 		self.menuShadow.layer.masksToBounds = false
 		self.menuShadow.layer.shadowColor = UIColor.black.cgColor
 		self.menuShadow.layer.shadowOffset = CGSize(width: 0, height: 5)
-		self.menuShadow.layer.shadowOpacity = 0.11
+		self.menuShadow.layer.shadowOpacity = 0.08
 
 		
         // 첫번째 메뉴 선택

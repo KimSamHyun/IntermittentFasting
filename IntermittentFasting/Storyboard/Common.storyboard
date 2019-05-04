@@ -22,8 +22,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kv6-Zb-nbt" userLabel="center View">
+                                <rect key="frame" x="37.5" y="160.5" width="300" height="346"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="2Pb-7A-0Si"/>
+                                    <constraint firstAttribute="height" constant="346" id="xRY-li-3My"/>
+                                </constraints>
+                            </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1s9-kH-gwp" customClass="RoundLineView" customModule="IntermittentFasting" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="138.5" width="300" height="390"/>
+                                <rect key="frame" x="37.5" y="160.5" width="300" height="390"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1aO-gU-TzH">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="64"/>
@@ -327,8 +335,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1s9-kH-gwp" firstAttribute="centerY" secondItem="wnk-5C-MjK" secondAttribute="centerY" id="0yU-H6-e6M"/>
+                            <constraint firstItem="Kv6-Zb-nbt" firstAttribute="centerY" secondItem="wnk-5C-MjK" secondAttribute="centerY" id="02o-fk-XtL"/>
                             <constraint firstItem="Qyh-wx-epZ" firstAttribute="width" secondItem="wnk-5C-MjK" secondAttribute="width" id="3UK-L9-ZZP"/>
+                            <constraint firstItem="Kv6-Zb-nbt" firstAttribute="centerX" secondItem="wnk-5C-MjK" secondAttribute="centerX" id="8bf-II-4Oc"/>
+                            <constraint firstItem="1s9-kH-gwp" firstAttribute="top" secondItem="Kv6-Zb-nbt" secondAttribute="top" id="9PF-U0-QJV"/>
                             <constraint firstItem="Qyh-wx-epZ" firstAttribute="top" secondItem="wnk-5C-MjK" secondAttribute="top" id="AvB-dQ-IJy"/>
                             <constraint firstItem="1s9-kH-gwp" firstAttribute="centerX" secondItem="wnk-5C-MjK" secondAttribute="centerX" id="DPZ-wq-bSx"/>
                             <constraint firstItem="Qyh-wx-epZ" firstAttribute="height" secondItem="wnk-5C-MjK" secondAttribute="height" id="qxQ-tC-2qn"/>
